@@ -2,6 +2,7 @@ from telebot import async_telebot
 import asyncio
 from config import *
 from functions import *
+import uvicorn
 
 bot = async_telebot.AsyncTeleBot(TOKEN)
 
@@ -80,4 +81,13 @@ async def echo_all(message: types.Message):
     elif str(message.from_user.id) == ADMIN and not message.reply_to_message:
         await bot.send_message(message.chat.id, "Reply to a message to send it to the user.")
 
-asyncio.run(bot.polling())
+async def app(scope, receive, send):
+    asyncio.run(bot.polling())
+
+async def main():
+    config = uvicorn.Config("main:app", port=5000, log_level="info")
+    server = uvicorn.Server(config)
+    await server.serve()
+
+if __name__ == "__main__":
+    asyncio.run(main())
