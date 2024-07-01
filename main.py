@@ -6,7 +6,7 @@ bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.send_message(message.chat.id, '🇺🇿 Assalomu alaykum!\n🛍️ Lolo Store Telegram botiga xush kelibsiz!\n\n💌 Buyurtma berish, taklif va murojaatlar uchun botga xabar yuboring:')
+    bot.send_message(message.chat.id, '🇺🇿 Assalomu alaykum!\n🛍️ Lolo Store Telegram botiga xush kelibsiz!\n\n💌 Buyurtma berish, taklif va murojaatlar uchun botga xabar yuboring:\n\n---------------------\n\n🇺🇿 Здравствуйте!\n🛍️ Добро пожаловать в Telegram-бот Lolo Store!\n\n💌 Для заказа, предложений и вопросов пишите боту:')
 
 @bot.message_handler(['user'])
 def return_user(message: types.Message):
