@@ -7,7 +7,7 @@ bot = async_telebot.AsyncTeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
 async def start(message):
-    await bot.send_message(message.chat.id, '🇺🇿 Assalomu alaykum!\n🛍️ Lolo Store Telegram botiga xush kelibsiz!\n\n💌 Buyurtma berish, taklif va murojaatlar uchun botga xabar yuboring:')
+    await bot.send_message(message.chat.id, '🇺🇿 Assalomu alaykum!\n🛍️ Lolo Store Telegram botiga xush kelibsiz!\n\n💌 Buyurtma berish, taklif va murojaatlar uchun botga xabar yuboring:\n\n---------------------\n\n🇺🇿 Здравствуйте!\n🛍️ Добро пожаловать в Telegram-бот Lolo Store!\n\n💌 Для заказа, предложений и вопросов пишите боту:')
 
 @bot.message_handler(['user'])
 async def return_user(message: types.Message):
