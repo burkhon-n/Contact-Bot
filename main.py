@@ -79,4 +79,4 @@ def echo_all(message: types.Message):
     elif str(message.from_user.id) == ADMIN and not message.reply_to_message:
         bot.send_message(message.chat.id, "Reply to a message to send it to the user.")
 
-bot.polling()
+bot.infinity_polling()
